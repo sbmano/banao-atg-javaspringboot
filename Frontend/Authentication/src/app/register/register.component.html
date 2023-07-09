@@ -1,0 +1,62 @@
+<button class="btn w-6 mt-4 mb-5 pull-right" style="background-color:#e3832e;margin-right: 20px;" type="submit" (click)="tologin()">Login</button>
+<div class="container align" style="margin-top: 9%;">
+    <div class="row align-items-center justify-content-center mt-4 mb-4" style="width: 75%; margin-left: 16%;">
+        <div class="col-md-6 card shadow pt-3 pb-3 px-6">
+            <h3 class="d-flex justify-content-center">Registration</h3>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="username" class="form-label">First Name</label>
+                    <span *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="red">
+                        name Required
+                    </span>
+                    <input type="text" class="form-control"  formControlName="username"
+                        [class.warning]="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <span *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched"
+                        class="red">
+                        email be like @gmail.com
+                    </span>
+                    <input type="text" class="form-control" formControlName="email"
+                        [class.warning]="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <span *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched"
+                        class="red">
+                        password Required
+                    </span>
+                    <input type="password" class="form-control" formControlName="password"
+                        [class.warning]="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="confirmpassword" class="form-label">Confirm Password</label>
+                    <span *ngIf="signupForm.get('confirmpassword')?.invalid && signupForm.get('confirmpassword')?.touched"
+                        class="red">
+                        confirm the password
+                    </span>
+                    <input type="password" class="form-control" formControlName="confirmpassword"
+                        [class.warning]="signupForm.get('confirmpassword')?.invalid && signupForm.get('confirmpassword')?.touched">
+                </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn" [disabled]="signupForm.invalid" style="background-color:#ff0000;font-size:11px;margin-left: 41px;" *ngIf="invalid">Password does not match with confirm password</button>
+                    </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn" [disabled]="signupForm.invalid" style="background-color:#e3832e; margin-left: 129px;">Register</button>
+                </div>
+            </form>
+          
+
+        </div>
+    </div>
+</div>
+
+
+
+ 

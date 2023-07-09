@@ -1,0 +1,26 @@
+<button class="btn w-6 mt-4 mb-5 pull-right" style="background-color:#e3832e;margin-right: 20px;" type="submit" (click)="tologout()">Logout</button>
+<button class="btn w-6 mt-4 mb-5" style="background-color:#98e32e;margin-left: 20px;" type="submit" (click)="todashboard()">Go to Dashboard</button>
+
+
+<div class="d-flex justify-content-center">
+<table class="table table-striped" style="width:50%;margin-top:140px;">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>role</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userdetails">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td *ngFor="let role of user.roles">{{role.name}}</td>
+          </tr>
+    </tbody>
+
+  </table>
+
+</div>

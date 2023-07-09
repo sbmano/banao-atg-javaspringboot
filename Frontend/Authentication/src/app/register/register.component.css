@@ -1,0 +1,18 @@
+
+.login{
+    min-height: calc(100vh - 284px);
+    margin-left: 9%;
+}
+
+.red{
+    color:#dc3545;;
+    float: right;
+}
+.warning{
+    border-color: #dc3545;
+}
+.align{
+    margin-top: 158px;
+    margin-bottom: 158px;
+    width: 70%;
+}
